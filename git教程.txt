@@ -1,0 +1,42 @@
+Git教程
+1.构建本地与远程的联系
+1.	设置用户名git config --global user.name ‘github用户名’
+设置用户邮箱 git config --global user.email ‘github邮箱’
+(用于在github上显示是谁提交了文件)
+2.本地仓库的git命令
+1.	初始化git
+mkdir dir创建一个文件夹
+cd dir进入文件夹
+git init 创建git仓库
+ 
+2.	向仓库中添加文件并提交
+touch 文件名 添加一个全新的文件
+git status 查看文件状态（红色表示在工作区，绿色暂存区）
+git add 文件名 将文件从工作区存入到暂存区以便提交
+git commit –m ‘提交备注’
+git config --list 查看config配置文件
+3.	删除文件
+ 
+3.管理远程仓库
+1.	git clone 远程仓库地址 将远程仓库克隆到本地
+2.	git push：将本地仓库推送到远程仓库，前提需要先commit到本地仓库
+4. 基本问题与解决办法
+1.	解决不同步或者无权限问题时
+config文件中未设置用户名密码，无法访问
+ 
+2.	push时提示out of memory 
+config 文件中默认单个文件大小有限，可设置大一点
+3.	git clone和push很慢
+https://blog.csdn.net/yzpbright/article/details/82117324
+方法①：在host文件（需要赋予修改权限）后面加入如下信息
+151.101.76.249 http://global-ssl.fastly.net
+192.30.255.113 http://github.com  #此处112还是113根据自己的情况调整？
+方法②使用镜像仓库（更有用）
+使用github的镜像，只要把仓库的 github.com 改为 github.com.cnpmjs.org 即可。
+4.	本地上github很慢
+https://www.jianshu.com/p/933ccffaff12
+在上面网址选择合适的ip，然后放到host文件中
+ 
+5.	
+
+ 
